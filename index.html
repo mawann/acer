@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col">
           <h1 class="text-center mt-5 text-shadow">Mawan Agus Nugroho, M.Kom</h1>
-          <p class="text-center mb-5"><span class="fw-bold">SMK PGRI 1 Tangerang</span><br>
+          <p class="text-center mb-5"><span id="info" class="fw-bold"></span><br>
             Guru Penggerak angkatan 7<br>
             Semifinalis Acer Smart School Award</p>
         </div>
@@ -307,6 +307,22 @@
   </div> <!-- Scroll spy -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script -->
+
+  <script>
+    var today = new Date();
+    var targetDate = new Date('2023-11-30');
+    var infoElement = document.getElementById('info');
+  
+    if (
+      today.getDate() === targetDate.getDate() &&
+      today.getMonth() === targetDate.getMonth() &&
+      today.getFullYear() === targetDate.getFullYear()
+    ) {
+      infoElement.innerText = 'SMK PGRI 1 Tangerang';
+    } else {
+      infoElement.innerText = '';
+    }
+  </script>
 </body>
 </html>
