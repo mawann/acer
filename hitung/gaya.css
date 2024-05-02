@@ -2,6 +2,10 @@ body {
   background-color:#fefefe;
 }
 
+.info, .utama {
+  background-color:#ffffff;
+}
+
 .tautan {
   text-decoration:underline;
   color:blue;
