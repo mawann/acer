@@ -115,6 +115,14 @@
 
   <script>
     function tampilkan(nomor) {
+      // Informasi nama file.
+      switch (nomor) {
+        case 1: document.getElementById("namafile").innerHTML = 'persegi-form.php'; break; 
+        case 2: document.getElementById("namafile").innerHTML = 'kotak-form.php'; break; 
+        case 3: document.getElementById("namafile").innerHTML = 'lingkaran-form.php'; break; 
+        case 4: document.getElementById("namafile").innerHTML = 'bola-form.php'; break; 
+      };
+      
       document.getElementById("instruksi").style.display = "none";
       // Hitung 1 sampai 4.
       for (let i = 1; i <= 4; i++) {
@@ -124,13 +132,6 @@
       };
       document.getElementById("form-" + nomor).style.display = "block";
 
-      switch (nomor) {
-        case 1: document.getElementById("namafile").innerHTML = 'persegi-form.php'; break; 
-        case 2: document.getElementById("namafile").innerHTML = 'kotak-form.php'; break; 
-        case 3: document.getElementById("namafile").innerHTML = 'lingkaran-form.php'; break; 
-        case 4: document.getElementById("namafile").innerHTML = 'bola-form.php'; break; 
-      };
-      
       return false;
     }
 
