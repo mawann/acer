@@ -1,3 +1,10 @@
+/* 
+-------------------------------------
+Script yang digunakan oleh index.html
+(C) Mawan A. Nugroho.
+-------------------------------------
+*/
+
 function tampilkan(nomor) {
   // Informasi nama file.
   switch (nomor) {
@@ -26,8 +33,8 @@ function hitung(nomor) {
       document.getElementById("hasil-1").style.display = "block";
       // Menghitung luas persegi
       var panjang = document.getElementById("form-1-panjang").value;
-      var lebar = document.getElementById("form-1-lebar").value;
-      var luas = panjang * lebar;
+      var lebar   = document.getElementById("form-1-lebar").value;
+      var luas    = panjang * lebar;
       document.getElementById("hasil-1").innerHTML =
       "<p>Diketahui:<br>" +
       "Panjang = " + panjang + "<br>" +
@@ -41,10 +48,10 @@ function hitung(nomor) {
       document.getElementById("namafile").innerHTML = 'kotak-hitung.php'; 
       document.getElementById("hasil-2").style.display = "block";
       // Menghitung volume persegi
-      var panjang = document.getElementsByName("form-2-panjang")[0].value;
-      var lebar = document.getElementsByName("form-2-lebar")[0].value;
-      var tinggi = document.getElementsByName("form-2-tinggi")[0].value;
-      var volume = panjang * lebar * tinggi;
+      var panjang = document.getElementById("form-2-panjang").value;
+      var lebar   = document.getElementById("form-2-lebar").value;
+      var tinggi  = document.getElementById("form-2-tinggi").value;
+      var volume  = panjang * lebar * tinggi;
       document.getElementById("hasil-2").innerHTML =
       "<p>Diketahui:<br>" +
       "Panjang = " + panjang + "<br>" +
@@ -59,9 +66,9 @@ function hitung(nomor) {
       document.getElementById("namafile").innerHTML = 'lingkaran-hitung.php'; 
       document.getElementById("hasil-3").style.display = "block";
       // Menghitung luas lingkaran
-      var diameter = document.getElementsByName("form-3-diameter")[0].value;
+      var diameter = document.getElementById("form-3-diameter").value;
       var jarijari = diameter / 2;
-      var luas = 3.14159 * jarijari * jarijari;
+      var luas     = 3.14159 * jarijari * jarijari;
       document.getElementById("hasil-3").innerHTML =
       "<p>Diketahui:<br>" +
       "Diameter = " + diameter + "<br>" +
@@ -75,9 +82,9 @@ function hitung(nomor) {
       document.getElementById("namafile").innerHTML = 'bola-hitung.php'; 
       document.getElementById("hasil-4").style.display = "block";
       // Menghitung luas lingkaran
-      var diameter = document.getElementsByName("form-4-diameter")[0].value;
+      var diameter = document.getElementById("form-4-diameter").value;
       var jarijari = diameter / 2;
-      var volume = (4/3) * 3.14159 * Math.pow(jarijari, 3);
+      var volume   = (4/3) * 3.14159 * Math.pow(jarijari, 3);
       document.getElementById("hasil-4").innerHTML =
       "<p>Diketahui:<br>" +
       "Diameter = " + diameter + "<br>" +
