@@ -25,8 +25,8 @@ function hitung(nomor) {
       document.getElementById("namafile").innerHTML = 'persegi-hitung.php'; 
       document.getElementById("hasil-1").style.display = "block";
       // Menghitung luas persegi
-      var panjang = document.getElementsByName("form-1-panjang")[0].value;
-      var lebar = document.getElementsByName("form-1-lebar")[0].value;
+      var panjang = document.getElementsById("form-1-panjang").value;
+      var lebar = document.getElementsById("form-1-lebar").value;
       var luas = panjang * lebar;
       document.getElementById("hasil-1").innerHTML =
       "<p>Diketahui:<br>" +
