@@ -1,3 +1,7 @@
+body {
+  background-color:#fefefe;
+}
+
 .tautan {
   text-decoration:underline;
   color:blue;
