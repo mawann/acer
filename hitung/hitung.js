@@ -5,6 +5,18 @@ Script yang digunakan oleh index.html
 -------------------------------------
 */
 
+function beranda() {
+  // Kembali ke index.php
+  document.getElementById("namafile").innerHTML = 'index.php'; 
+  document.getElementById("instruksi").style.display = "block";
+  // Hitung 1 sampai 4.
+  for (let i = 1; i <= 4; i++) {
+    // pilihan-i disembunyikan.
+    document.getElementById("form-" + i).style.display = "none";
+    document.getElementById("hasil-" + i).style.display = "none";
+  };  
+}
+
 function tampilkan(nomor) {
   // Informasi nama file.
   switch (nomor) {
