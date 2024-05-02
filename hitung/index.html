@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 1 - Oleh Mawan A. Nugroho</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row border mt-5 mb-5">
+      <div class="col-12 col-md-4 border">
+        <h1>Pilihan</h1>
+        <ol>
+          <li><span style="text-decoration:underline; color:blue; cursor:pointer;" onClick="return tampilkan(1)">Menghitung luas persegi</span></li>
+          <li><span style="text-decoration:underline; color:blue; cursor:pointer;" onClick="return tampilkan(2)">Menghitung volume kotak</span></li>
+          <li><span style="text-decoration:underline; color:blue; cursor:pointer;" onClick="return tampilkan(3)">Menghitung luas lingkaran</span></li>
+          <li><span style="text-decoration:underline; color:blue; cursor:pointer;" onClick="return tampilkan(4)">Menghitung volume bola</span></li>
+        </ol>
+      </div>
+      <div class="col-12 col-md-8 border">
+        <div id="instruksi">
+          <h1>Instruksi</h1>
+          <p>Silakan klik menu di samping kiri.</p>
+        </div>
+        <div id="form-1" style="display:none">
+          <h1>Menghitung luas persegi</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td>Panjang:</td>
+              <td><input type="text" name="form-1-panjang" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Lebar:</td>
+              <td><input type="text" name="form-1-lebar" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-primary" onClick="return hitung(1)">Hitung</button></td>
+            </tr>
+          </table>
+          <div id="hasil-1" style="display:none">
+          </div>
+        </div>
+        <div id="form-2" style="display:none">
+          <h1>Menghitung volume kotak</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td>Panjang:</td>
+              <td><input type="text" name="form-2-panjang" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Lebar:</td>
+              <td><input type="text" name="form-2-lebar" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Tinggi:</td>
+              <td><input type="text" name="form-2-tinggi" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-primary" onClick="return hitung(2)">Hitung</button></td>
+            </tr>
+          </table>
+          <div id="hasil-2">
+          </div>
+        </div>
+        <div id="form-3" style="display:none">
+          <h1>Menghitung luas lingkaran</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td>Diameter:</td>
+              <td><input type="text" name="form-3-diameter" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-primary" onClick="return hitung(3)">Hitung</button></td>
+            </tr>
+          </table>
+          <div id="hasil-3">
+          </div>
+        </div>
+        <div id="form-4" style="display:none">
+          <h1>Menghitung volume bola</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td>Diameter:</td>
+              <td><input type="text" name="form-4-diameter" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-primary" onClick="return hitung(4)">Hitung</button></td>
+            </tr>
+          </table>
+          <div id="hasil-4">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <p class="text-center">Buatkan aplikasi web seperti ini dengan memakai PHP murni. Tidak boleh memakai JavaScript. File-file yang harus dibuat
+        adalah: index.php, persegi-form.php, persegi-hitung.php, kotak-form.php, kotak-hitung.php, lingkaran-form.php, lingkaran-hitung.php,
+        bola-form.php, bola-hitung.php</p>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function tampilkan(nomor) {
+      document.getElementById("instruksi").style.display = "none";
+      // Hitung 1 sampai 4.
+      for (let i = 1; i <= 4; i++) {
+        // pilihan-i disembunyikan.
+        document.getElementById("form-" + i).style.display = "none";
+        document.getElementById("hasil-" + i).style.display = "none";
+      };
+      document.getElementById("form-" + nomor).style.display = "block";
+      return false;
+    }
+
+    function hitung(nomor) {
+      switch (nomor) {
+        case 1:
+          document.getElementById("hasil-1").style.display = "block";
+          // Menghitung luas persegi
+          var panjang = document.getElementsByName("form-1-panjang")[0].value;
+          var lebar = document.getElementsByName("form-1-lebar")[0].value;
+          var luas = panjang * lebar;
+          document.getElementById("hasil-1").innerHTML =
+          "<p>Diketahui:<br>" +
+          "Panjang = " + panjang + "<br>" +
+          "Lebar = " + lebar + "</p>" +
+          "<p>Ditanyakan: Luas</p>" +
+          "<p>Rumus luas = panjang x lebar</p>" +
+          "<p>Luas = " + panjang + " x " + lebar + "<br>" +
+          "Luas = " + luas + "</p>";
+          break;
+        case 2:
+          document.getElementById("hasil-2").style.display = "block";
+          // Menghitung volume persegi
+          var panjang = document.getElementsByName("form-2-panjang")[0].value;
+          var lebar = document.getElementsByName("form-2-lebar")[0].value;
+          var tinggi = document.getElementsByName("form-2-tinggi")[0].value;
+          var volume = panjang * lebar * tinggi;
+          document.getElementById("hasil-2").innerHTML =
+          "<p>Diketahui:<br>" +
+          "Panjang = " + panjang + "<br>" +
+          "Lebar = " + lebar + "</br>" +
+          "Tinggi = " + tinggi + "</p>" +
+          "<p>Ditanyakan: Volume</p>" +
+          "<p>Rumus volume = panjang x lebar x tinggi</p>" +
+          "<p>Volume = " + panjang + " x " + lebar + " x " + tinggi + "<br>" +
+          "Volume = " + volume + "</p>";
+          break;
+        case 3:
+          document.getElementById("hasil-3").style.display = "block";
+          // Menghitung luas lingkaran
+          var diameter = document.getElementsByName("form-3-diameter")[0].value;
+          var jarijari = diameter / 2;
+          var luas = 3.14159 * jarijari * jarijari;
+          document.getElementById("hasil-3").innerHTML =
+          "<p>Diketahui:<br>" +
+          "Diameter = " + diameter + "<br>" +
+          "Jari-jari = " + jarijari + "</p>" +
+          "<p>Ditanyakan: Luas</p>" +
+          "<p>Rumus luas = phi x jari-jari x jari-jari</p>" +
+          "<p>Luas = " + 3.14159 + " x " + jarijari + " x " + jarijari + "<br>" +
+          "Luas = " + luas + "</p>";
+          break;
+        case 4:
+          document.getElementById("hasil-4").style.display = "block";
+          // Menghitung luas lingkaran
+          var diameter = document.getElementsByName("form-4-diameter")[0].value;
+          var jarijari = diameter / 2;
+          var volume = (4/3) * 3.14159 * Math.pow(jarijari, 3);
+          document.getElementById("hasil-4").innerHTML =
+          "<p>Diketahui:<br>" +
+          "Diameter = " + diameter + "<br>" +
+          "Jari-jari = " + jarijari + "</p>" +
+          "<p>Ditanyakan: Volume</p>" +
+          "<p>Rumus volume = (3 / 4) x phi x (jari-jari ^ 3)</p>" +
+          "<p>Volume = " + (3/4) + " x " + 3.14159 + " x " + Math.pow(jarijari, 3) + "<br>" +
+          "Volume = " + volume + "</p>";
+          break;
+        default:
+      }
+    }
+  </script>
+</body>
+</html>
