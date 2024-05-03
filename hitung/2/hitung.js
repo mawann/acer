@@ -13,8 +13,8 @@ function beranda() {
   for (let i = 1; i <= 4; i++) {
     // pilihan-i disembunyikan.
     document.getElementById("form-" + i).style.display = "none";
-    document.getElementById("hasil-" + i).style.display = "none";
   };  
+  document.getElementById("hasil").style.display = "none";
 }
 
 function tampilkan(nomor) {
@@ -31,9 +31,9 @@ function tampilkan(nomor) {
   for (let i = 1; i <= 4; i++) {
     // pilihan-i disembunyikan.
     document.getElementById("form-" + i).style.display = "none";
-    document.getElementById("hasil-" + i).style.display = "none";
   };
   document.getElementById("form-" + nomor).style.display = "block";
+  document.getElementById("hasil").style.display = "none";
 
   return false;
 }
@@ -48,7 +48,7 @@ function hitung(nomor) {
       var panjang = document.getElementById("form-1-panjang").value;
       var lebar   = document.getElementById("form-1-lebar").value;
       var luas    = panjang * lebar;
-      document.getElementById("hasil-1").innerHTML = hasil +
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Panjang = " + panjang + "<br>" +
       "Lebar = " + lebar + "</p>" +
@@ -65,7 +65,7 @@ function hitung(nomor) {
       var lebar   = document.getElementById("form-2-lebar").value;
       var tinggi  = document.getElementById("form-2-tinggi").value;
       var volume  = panjang * lebar * tinggi;
-      document.getElementById("hasil-2").innerHTML = hasil +
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Panjang = " + panjang + "<br>" +
       "Lebar = " + lebar + "</br>" +
@@ -82,7 +82,7 @@ function hitung(nomor) {
       var diameter = document.getElementById("form-3-diameter").value;
       var jarijari = diameter / 2;
       var luas     = 3.14159 * jarijari * jarijari;
-      document.getElementById("hasil-3").innerHTML = hasil +
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Diameter = " + diameter + "<br>" +
       "Jari-jari = " + jarijari + "</p>" +
@@ -98,7 +98,7 @@ function hitung(nomor) {
       var diameter = document.getElementById("form-4-diameter").value;
       var jarijari = diameter / 2;
       var volume   = (4/3) * 3.14159 * Math.pow(jarijari, 3);
-      document.getElementById("hasil-4").innerHTML = hasil +
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Diameter = " + diameter + "<br>" +
       "Jari-jari = " + jarijari + "</p>" +
@@ -108,5 +108,7 @@ function hitung(nomor) {
       "Volume = " + volume + "</p>";
       break;
     default:
-  }
+      hasil = hasil + "<p>Ada bug!</p>";
+  };
+  document.getElementById("hasil").innerHTML = hasil;
 }
