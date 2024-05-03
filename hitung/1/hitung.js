@@ -13,7 +13,6 @@ function beranda() {
   for (let i = 1; i <= 4; i++) {
     // pilihan-i disembunyikan.
     document.getElementById("form-" + i).style.display = "none";
-    document.getElementById("hasil-" + i).style.display = "none";
   };  
   document.getElementById("hasil").style.display = "none";
 }
