@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 1 - Oleh Mawan A. Nugroho</title>
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../gaya.css">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <!-- Informasi nama file -->
+    <div id="info" class="row mt-2 mb-4 shadow border rounded text-white bg-dark bg-gradient">
+      <div class="col">
+        <p class="mt-1 mb-1">Nama file: <span id="namafile" class="fw-bold">index.php</span></p>
+      </div>
+    </div>
+    <!-- Utama -->
+    <div id="utama" class="row shadow-sm border mt-4 mb-4 bg-white">
+      <!-- Kiri -->
+      <div class="col-5 col-sm-4 border">
+        <h1>Pilihan</h1>
+        <ol>
+          <li><span class="tautan" onClick="return tampilkan(1)">Menghitung luas persegi</span></li>
+          <li><span class="tautan" onClick="return tampilkan(2)">Menghitung volume kotak</span></li>
+          <li><span class="tautan" onClick="return tampilkan(3)">Menghitung luas lingkaran</span></li>
+          <li><span class="tautan" onClick="return tampilkan(4)">Menghitung volume bola</span></li>
+        </ol>
+        <p>Kembali ke <span class="tautan" onClick="return beranda()">index.php</span></p>
+      </div>
+      <!-- Kanan -->
+      <div class="col-7 col-sm-8 border">
+        <!-- index.php -->
+        <div id="instruksi">
+          <h1>Instruksi</h1>
+          <p>Silakan klik menu di samping kiri.</p>
+        </div>
+        <!-- persegi-form.php -->
+        <div id="form-1" style="display:none">
+          <h1>Menghitung luas persegi</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td><label for="form-1-panjang">Panjang:</label></td>
+              <td><input type="text" id="form-1-panjang" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><label for="form-1-lebar">Lebar:</label></td>
+              <td><input type="text" id="form-1-lebar" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-success" onClick="return hitung(1)">Hitung</button></td>
+            </tr>
+          </table>
+        </div>
+        <!-- kotak-form.php -->
+        <div id="form-2" style="display:none">
+          <h1>Menghitung volume kotak</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td><label for="form-2-panjang">Panjang:</label></td>
+              <td><input type="text" id="form-2-panjang" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><label for="form-2-lebar">Lebar:</label></td>
+              <td><input type="text" id="form-2-lebar" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><label for="form-2-tinggi">Tinggi:</label></td>
+              <td><input type="text" id="form-2-tinggi" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-success" onClick="return hitung(2)">Hitung</button></td>
+            </tr>
+          </table>
+        </div>
+        <!-- lingkaran-form.php -->
+        <div id="form-3" style="display:none">
+          <h1>Menghitung luas lingkaran</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td><label for="form-3-diameter">Diameter:</td>
+              <td><input type="text" id="form-3-diameter" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-success" onClick="return hitung(3)">Hitung</button></td>
+            </tr>
+          </table>
+        </div>
+        <!-- bola-form.php -->
+        <div id="form-4" style="display:none">
+          <h1>Menghitung volume bola</h1>
+          <table class="table table-borderless">
+            <tr>
+              <td><label for="form-4-diameter">Diameter:</td>
+              <td><input type="text" id="form-4-diameter" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><button class="btn btn-success" onClick="return hitung(4)">Hitung</button></td>
+            </tr>
+          </table>
+        </div>
+        <!-- *-hitung.php -->
+        <div id="hasil">
+        </div>
+      </div>
+    </div>
+    <!-- Bawah -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="text-center fw-light">Buatkan aplikasi web seperti ini dengan memakai PHP murni. Tidak boleh memakai JavaScript. File-file yang harus dibuat
+        adalah: index.php, persegi-form.php, persegi-hitung.php, kotak-form.php, kotak-hitung.php, lingkaran-form.php, lingkaran-hitung.php,
+        bola-form.php, dan bola-hitung.php</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="hitung.js"></script>
+</body>
+</html>
