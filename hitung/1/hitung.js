@@ -39,6 +39,7 @@ function tampilkan(nomor) {
 }
 
 function hitung(nomor) {
+  var hasil = "<h1>Hasil Perhitungan</h1>";
   switch (nomor) {
     case 1:
       document.getElementById("namafile").innerHTML = 'persegi-hitung.php'; 
@@ -48,7 +49,7 @@ function hitung(nomor) {
       var panjang = document.getElementById("form-1-panjang").value;
       var lebar   = document.getElementById("form-1-lebar").value;
       var luas    = panjang * lebar;
-      document.getElementById("hasil").innerHTML =
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Panjang = " + panjang + "<br>" +
       "Lebar = " + lebar + "</p>" +
@@ -66,7 +67,7 @@ function hitung(nomor) {
       var lebar   = document.getElementById("form-2-lebar").value;
       var tinggi  = document.getElementById("form-2-tinggi").value;
       var volume  = panjang * lebar * tinggi;
-      document.getElementById("hasil").innerHTML =
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Panjang = " + panjang + "<br>" +
       "Lebar = " + lebar + "</br>" +
@@ -84,7 +85,7 @@ function hitung(nomor) {
       var diameter = document.getElementById("form-3-diameter").value;
       var jarijari = diameter / 2;
       var luas     = 3.14159 * jarijari * jarijari;
-      document.getElementById("hasil").innerHTML =
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Diameter = " + diameter + "<br>" +
       "Jari-jari = " + jarijari + "</p>" +
@@ -101,7 +102,7 @@ function hitung(nomor) {
       var diameter = document.getElementById("form-4-diameter").value;
       var jarijari = diameter / 2;
       var volume   = (4/3) * 3.14159 * Math.pow(jarijari, 3);
-      document.getElementById("hasil").innerHTML =
+      hasil = hasil +
       "<p>Diketahui:<br>" +
       "Diameter = " + diameter + "<br>" +
       "Jari-jari = " + jarijari + "</p>" +
@@ -111,5 +112,7 @@ function hitung(nomor) {
       "Volume = " + volume + "</p>";
       break;
     default:
-  }
+  };
+  document.getElementById("hasil").innerHTML = hasil;
+
 }
