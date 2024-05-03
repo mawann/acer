@@ -43,7 +43,6 @@ function hitung(nomor) {
   switch (nomor) {
     case 1:
       document.getElementById("namafile").innerHTML = 'persegi-hitung.php'; 
-      document.getElementById("hasil-1").style.display = "block";
       // Menghitung luas persegi
       var panjang = document.getElementById("form-1-panjang").value;
       var lebar   = document.getElementById("form-1-lebar").value;
@@ -59,7 +58,6 @@ function hitung(nomor) {
       break;
     case 2:
       document.getElementById("namafile").innerHTML = 'kotak-hitung.php'; 
-      document.getElementById("hasil-2").style.display = "block";
       // Menghitung volume persegi
       var panjang = document.getElementById("form-2-panjang").value;
       var lebar   = document.getElementById("form-2-lebar").value;
@@ -77,7 +75,6 @@ function hitung(nomor) {
       break;
     case 3:
       document.getElementById("namafile").innerHTML = 'lingkaran-hitung.php'; 
-      document.getElementById("hasil-3").style.display = "block";
       // Menghitung luas lingkaran
       var diameter = document.getElementById("form-3-diameter").value;
       var jarijari = diameter / 2;
@@ -93,7 +90,6 @@ function hitung(nomor) {
       break;
     case 4:
       document.getElementById("namafile").innerHTML = 'bola-hitung.php'; 
-      document.getElementById("hasil-4").style.display = "block";
       // Menghitung luas lingkaran
       var diameter = document.getElementById("form-4-diameter").value;
       var jarijari = diameter / 2;
@@ -110,5 +106,6 @@ function hitung(nomor) {
     default:
       hasil = hasil + "<p>Ada bug!</p>";
   };
+  document.getElementById("hasil").style.display = "block";
   document.getElementById("hasil").innerHTML = hasil;
 }
