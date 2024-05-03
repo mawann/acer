@@ -31,9 +31,9 @@ function tampilkan(nomor) {
   for (let i = 1; i <= 4; i++) {
     // pilihan-i disembunyikan.
     document.getElementById("form-" + i).style.display = "none";
-    document.getElementById("hasil-" + i).style.display = "none";
   };
   document.getElementById("form-" + nomor).style.display = "block";
+  document.getElementById("hasil").style.display = "none";
 
   return false;
 }
