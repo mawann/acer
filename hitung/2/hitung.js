@@ -39,7 +39,7 @@ function tampilkan(nomor) {
 }
 
 function hitung(nomor) {
-  var hasil = "<h1>Hasil Perhitungan</h1>";
+  var hasil = "<h2>Hasil Perhitungan</h2>";
   switch (nomor) {
     case 1:
       document.getElementById("namafile").innerHTML = 'persegi-hitung.php'; 
