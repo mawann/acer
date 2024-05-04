@@ -112,6 +112,7 @@ function hitung(nomor) {
       "Volume = " + volume + "</p>";
       break;
     default:
+       hasil = hasil + "<p>Ada bug!</p>";
   };
   document.getElementById("hasil").innerHTML = hasil;
 
